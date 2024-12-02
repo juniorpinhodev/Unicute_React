@@ -1,12 +1,41 @@
-import React from "react";
+import React, { useEffect } from 'react';
+import Typed from 'typed.js';
 import "../index.css"; 
 
 const Home = () => {
+  useEffect(() => {
+    const typed = new Typed('.multiText', {
+      strings: ['UniCute', 'Lo-Fi', 'Relax'],
+      typeSpeed: 100,
+      backSpeed: 80,
+      backDelay: 1500,
+      loop: true,
+    });
+
+    return () => {
+      typed.destroy();
+    };
+  }, []);
+
   return (
-    <section className="home show-animate" id="Home">
+    <section className="wrapper" id="Home">
       
-      <div className="content">
-        
+      <div className="cols cols0">
+        <span className="topline">Olá</span>
+        <h1>
+          Sou <span className="multiText"></span>
+        </h1>
+        <p>
+          Relaxe com o UniCute. <br />
+          Acesse nossas lives no YouTube - Jogue nossos Games Relaxantes
+        </p>
+      </div>
+
+      <div className="cols cols1">
+        <div className="imgbox">
+          <img src="src/assets/ball.png" alt="Ball" id="splash" />
+          <img src="src/assets/img2.png" alt="Decorative" />
+        </div>
       </div>
           
     </section>
