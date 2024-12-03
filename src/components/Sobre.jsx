@@ -5,8 +5,18 @@ const Sobre = () => {
 
   return (
     <section className="sobre" id="Sobre">
+      
       <article>
         <h2 className="heading">Sobre <span>Unicute Relax</span></h2> 
+        
+        <div className="sobre-img">
+          <img 
+              src="src/assets/modeloParaFav.png" 
+              alt="UniCute Relax" 
+          />
+          <span className="circle"></span>
+        </div>
+        
         <div className="about-content">
           <p>
               Com <strong>UniCute</strong>, embarque em uma jornada encantadora de música <em>Lo-Fi</em> e serenidade.
