@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import "../index.css";
+import "../../index.css";
 
 function Header() {
   const [isPopupOpen, setPopupOpen] = useState(false);
