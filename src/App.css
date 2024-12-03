@@ -389,6 +389,11 @@ span {
     line-height: 1.8; 
   }
 
+  .p-center {
+    text-align: center;
+    margin: 4rem 16rem;
+  }
+
 .btn-box.btns {
     display: inline-block;
     width: 15rem;
