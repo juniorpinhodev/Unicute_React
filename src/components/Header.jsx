@@ -4,7 +4,6 @@ import "../index.css";
 function Header() {
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [isPlaying, setPlaying] = useState(false);
-  const [volume, setVolume] = useState(1);
   const [popupPosition, setPopupPosition] = useState({ top: "50%", left: "50%" });
   const popupRef = useRef(null); // Referência para o pop-up
 
@@ -13,14 +12,6 @@ function Header() {
       setPopupOpen(true);
     }
     setPlaying((prev) => !prev);
-  };
-
-  const handleVolumeChange = (event) => {
-    setVolume(event.target.value);
-  };
-
-  const handleMute = () => {
-    setVolume((prev) => (prev > 0 ? 0 : 1));
   };
 
   const handleClosePopup = () => {
