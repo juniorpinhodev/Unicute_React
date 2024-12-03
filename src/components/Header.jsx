@@ -73,6 +73,14 @@ function Header() {
           <a href="#Games">Games</a>
         </nav>
 
+                {/* Player */}
+                <div className="player">
+          <button onClick={handlePlayPause}>
+            {isPlaying ? "Pause" : "Play"}
+          </button>
+        </div>
+        
+
         <div className="links">
           <a
             href="https://www.youtube.com/@unicuterelax"
@@ -102,8 +110,8 @@ function Header() {
           >
             <i className="bx bxl-facebook"></i>
           </a>
-        </div>
-
+        </div>      
+        
         <a href="/languages/english.html" id="change-language">
           English Language
           <img src="src/assets/usa.png" alt="Switch to English" />
@@ -111,24 +119,7 @@ function Header() {
 
         <div className="bx bx-menu" id="menu-icon"></div>
 
-        {/* Player */}
-        <div className="player">
-          <button onClick={handlePlayPause}>
-            {isPlaying ? "Pause" : "Play"}
-          </button>
-          <input
-            type="range"
-            min="0"
-            max="1"
-            step="0.01"
-            value={volume}
-            onChange={handleVolumeChange}
-            title="Volume"
-          />
-          <button onClick={handleMute}>
-            {volume > 0 ? "Mute" : "Unmute"}
-          </button>
-        </div>
+        
       </header>
 
       {/* Pop-up para exibir a live */}
