@@ -14,7 +14,7 @@ function App() {
       <main>
         <Home />
         <Sobre />
-        <Games />       
+        <Games />      
       </main>
       <Footer />
     </div>
