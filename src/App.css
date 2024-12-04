@@ -403,6 +403,32 @@ span {
     line-height: 1.8; 
   }
 
+  .streaming-carousel {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .carousel-heading {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #444;
+  }
+  
+  .carousel-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 3rem;
+    color: #555;
+  }
+  
+  .carousel-icons i:hover {
+    color: var(--main-color); /* Cor de destaque ao passar o mouse */
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+  }
+  
+
  .p-center {
     text-align: center;
     margin: 3rem 16rem;
