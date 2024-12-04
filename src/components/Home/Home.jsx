@@ -5,7 +5,7 @@ import "../../App.css";
 const Home = () => {
   useEffect(() => {
     const typed = new Typed('.multiText', {
-      strings: ['UniCute', 'Lo-Fi', 'Relax'],
+      strings: ['UniCute', 'LoFi', 'Relax', 'Chill'],
       typeSpeed: 100,
       backSpeed: 80,
       backDelay: 1500,
