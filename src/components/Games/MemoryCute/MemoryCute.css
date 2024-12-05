@@ -1,11 +1,11 @@
-/* Background animado para o jogo */
 .memory-game {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: linear-gradient(to bottom, #f0f8ff, #00bfff);
+  border-radius: 10px;
+  background: url('./image/bg1.png') no-repeat center center/cover;
   height: 100vh;
   overflow: hidden;
   position: relative;
@@ -21,7 +21,7 @@
 .card {
   width: 12rem;
   height: 12rem;
-  perspective: 1000px; /* Dá a sensação de profundidade */
+  perspective: 1000px;
   cursor: pointer;
   position: relative;
   background-image: url("/image/preso2.png");
@@ -29,18 +29,18 @@
   background-position: center;
   transition: transform 0.5s ease;
   transform-style: preserve-3d;
-  border-radius: 12px; /* Bordas arredondadas */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombras sutis */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombras mais fortes */
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .card.flip {
-  transform: rotateY(180deg); /* Virada quando clicada */
+  transform: rotateY(180deg);
 }
 
 .card .front,
@@ -80,28 +80,66 @@
   font-size: 2rem;
   font-weight: bold;
   color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Sombramento para o texto */
 }
 
 #message {
   margin-top: 20px;
   font-size: 22px;
   font-weight: bold;
-  color: #ff6347;
+  color: #e3e2e4e3;
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(86, 56, 196, 0.74); /* Fundo semitransparente */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombras para destacar a caixa de mensagem */
 }
 
 #reset-button {
   margin-top: 20px;
   padding: 15px 30px;
-  background-color: #ff6347;
+  background-color: #5347ff;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 #reset-button:hover {
-  background-color: #e53e3e;
+  background-color: #865ed1;
   transform: scale(1.1);
   transition: background-color 0.3s, transform 0.3s;
+}
+
+.ranking {
+  position: absolute;
+  text-align: center;
+  top: 40rem;
+  left: 28rem;
+  width: 28rem;
+  background-color: rgba(255, 255, 255, 0.753);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 10px 20px rgba(0, 5, 0, 0.4), 
+            0 15px 30px rgba(0, 5, 0, 0.3), 
+            0 20px 40px rgba(0, 5, 0, 0.2);
+
+}
+
+.ranking h3 {
+  margin: 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+.ranking ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ranking li {
+  font-size: 14px;
+  margin: 5px 0;
 }

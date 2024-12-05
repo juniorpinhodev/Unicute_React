@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './MemoryCute.css';
 
-// Importe as imagens diretamente
 import u1 from './image/u1.png';
 import u2 from './image/u2.png';
 import u3 from './image/u3.png';
@@ -10,15 +9,17 @@ import u5 from './image/u5.png';
 import u6 from './image/u6.png';
 import preso2 from './image/preso2.png';
 
+import confetti from 'canvas-confetti';
+
 const MemoryCute = () => {
   const [timeLeft, setTimeLeft] = useState(60);
   const [cards, setCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
   const [lockCard, setLockCard] = useState(false);
   const [message, setMessage] = useState("");
-  const [gameFinished, setGameFinished] = useState(false); // Estado para verificar se o jogo terminou
+  const [ranking, setRanking] = useState([]);
+  const [gameOver, setGameOver] = useState(false);
 
-  // Cartas com imagens de frente e verso
   const cardsData = [
     { id: 1, image: u1 },
     { id: 2, image: u2 },
@@ -29,23 +30,28 @@ const MemoryCute = () => {
   ];
 
   useEffect(() => {
-    const shuffledCards = [...cardsData, ...cardsData].sort(() => Math.random() - 0.5); // Duplicar e embaralhar
+    const shuffledCards = [...cardsData, ...cardsData].sort(() => Math.random() - 0.5);
     setCards(shuffledCards.map(card => ({ ...card, isFlipped: false })));
+
+    const storedRanking = JSON.parse(localStorage.getItem("ranking")) || [];
+    setRanking(storedRanking);
   }, []);
 
   useEffect(() => {
-    if (gameFinished) return; // Se o jogo já terminou, não começa o cronômetro
+    if (gameOver) return; // Interrompe o cronômetro se o jogo terminou
+
     const timer = setInterval(() => {
       if (timeLeft > 0) {
         setTimeLeft(prevTime => prevTime - 1);
       } else {
         clearInterval(timer);
         setMessage("Você perdeu! Tente novamente.");
+        setGameOver(true); // Marca o jogo como terminado
       }
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [timeLeft, gameFinished]);
+  }, [timeLeft, gameOver]);
 
   const flipCard = (index) => {
     if (lockCard || cards[index].isFlipped) return;
@@ -61,11 +67,9 @@ const MemoryCute = () => {
       const [firstCard, secondCard] = flippedCards;
 
       if (firstCard.image === secondCard.image) {
-        // Cartas combinam
         setFlippedCards([]);
         checkForWin();
       } else {
-        // Cartas não combinam
         setLockCard(true);
         setTimeout(() => {
           const resetCards = [...cards];
@@ -81,9 +85,34 @@ const MemoryCute = () => {
 
   const checkForWin = () => {
     if (cards.every(card => card.isFlipped)) {
-      setMessage(`Parabéns! Você venceu! Tempo final: ${timeLeft} segundos`);
-      setGameFinished(true); // Define o jogo como finalizado
+      setMessage("Parabéns! Você venceu!");
+      setGameOver(true); // Marca o jogo como terminado
+      triggerConfetti();
+      updateRanking();
     }
+  };
+
+  const triggerConfetti = () => {
+    confetti({
+      particleCount: 200,
+      spread: 70,
+      origin: { x: 0.5, y: 0.5 },
+      colors: ['#ff0000', '#00ff00', '#0000ff', '#ff00ff', '#ffff00'],
+    });
+
+    confetti({
+      particleCount: 100,
+      spread: 200,
+      origin: { x: 0.5, y: 0.5 },
+      scalar: 1.2,
+      ticks: 150,
+    });
+  };
+
+  const updateRanking = () => {
+    const newRanking = [...ranking, timeLeft].sort((a, b) => b - a);
+    setRanking(newRanking);
+    localStorage.setItem("ranking", JSON.stringify(newRanking));
   };
 
   const resetGame = () => {
@@ -93,11 +122,20 @@ const MemoryCute = () => {
     setLockCard(false);
     setTimeLeft(60);
     setMessage("");
-    setGameFinished(false); // Resetar o estado de jogo finalizado
+    setGameOver(false); // Reseta o estado do jogo
   };
 
   return (
     <div className="memory-game">
+      <div className="ranking">
+        <h3>Seu maior recorde: {ranking[0] || "Nenhum"}</h3>
+        <ul>
+          {ranking.slice(1).map((time, index) => (
+            <li key={index}>{index + 2}º Venceu faltando {time} segundos</li>
+          ))}
+        </ul>
+      </div>
+
       <div className="game">
         {cards.map((card, index) => (
           <div
