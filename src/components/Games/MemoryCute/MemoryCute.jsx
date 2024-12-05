@@ -1,13 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const MemoryCute = () => {
-  return (
-    <div>
-      <h1>Memory Cute Game</h1>
-      <p>Este é o jogo Memory Cute! A lógica do jogo estará aqui.</p>
-      <p>teste teste</p>
-    </div>
-  );
-};
+const Jogo1 = () => (
+  <section id="jogo1">
+    <h1>Detalhes do Jogo 1</h1>
+    <p>Aqui está o conteúdo do Jogo 1.</p>
+  </section>
+);
 
-export default MemoryCute;
+export default Jogo1;
+// Compare this snippet from src/components/Games/MemoryCute/MemoryCute.jsx:

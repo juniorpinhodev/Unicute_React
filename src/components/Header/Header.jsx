@@ -48,8 +48,6 @@ function Header() {
   const handleMinimize = () => {
     setMinimized((prev) => !prev);
 };
-  
-
 
   return (
     <>
@@ -109,7 +107,6 @@ function Header() {
               </a>
 
               <div className="bx bx-menu" id="menu-icon"></div>
-
               
             </header>
 

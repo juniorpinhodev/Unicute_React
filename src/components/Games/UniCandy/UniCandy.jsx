@@ -1,13 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const UniCandy = () => {
-  return (
-    <div>
-      <h1>UniCandy Game</h1>
-      <p>Este é o jogo UniCandy! A lógica do jogo estará aqui.</p>
-      {/* A lógica real do jogo pode ser inserida aqui */}
-    </div>
-  );
-};
+const Jogo2 = () => (
+  <section id="jogo2">
+    <h1>Detalhes do Jogo 2</h1>
+    <p>Aqui está o conteúdo do Jogo 2.</p>
+  </section>
+);
 
-export default UniCandy;
+export default Jogo2;
+// Compare this snippet from src/components/Games/UniCandy/UniCandy.jsx:

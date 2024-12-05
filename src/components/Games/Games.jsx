@@ -1,54 +1,70 @@
 import React, { useState } from "react";
-import "../../index.css"; 
+import "../../index.css";
 
-import MemoryCute from './MemoryCute/MemoryCute.jsx';
-import UniCandy from './UniCandy/UniCandy.jsx';
+import UniCandy from "./UniCandy/UniCandy.jsx";
+import MemoryCute from "./MemoryCute/MemoryCute.jsx";
 
 const Games = () => {
   const [selectedGame, setSelectedGame] = useState(null); // Estado para controlar o jogo selecionado
-  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar se o modal está aberto
 
-  // Função que altera o jogo selecionado e abre o modal
-  const handleGameSelect = (game) => {
-    setSelectedGame(game);
-    setIsModalOpen(true); // Abre o modal quando um jogo for selecionado
+  const jogos = [
+    {
+      id: 1,
+      titulo: "UniCandy",
+      descricao: "Um jogo divertido com doces e unicórnios!",
+      imagem: "src/assets/thumb_UniCandy.png",
+      component: <UniCandy />, // Componente do jogo
+    },
+    {
+      id: 2,
+      titulo: "Memory Cute",
+      descricao: "Treine sua memória com fofura!",
+      imagem: "src/assets/thumb_Memory_Cute.png",
+      component: <MemoryCute />, // Componente do jogo
+    },
+  ];
+
+  // Função para alterar o jogo exibido
+  const handleGameSelect = (jogo) => {
+    setSelectedGame(jogo);
   };
 
-  // Função para fechar o modal
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedGame(null); // Limpa o jogo selecionado ao fechar o modal
+  // Função para voltar à lista de jogos
+  const goBack = () => {
+    setSelectedGame(null); // Volta à lista inicial
   };
 
   return (
     <section className="games" id="Games">
-      <h2 className="heading">
-        Games <span>Unicute Relax</span>
-      </h2>
-
-      <div className="games-container">
-        {/* Links de jogos */}
-        <div className="game-card" onClick={() => handleGameSelect('UniCandy')}>
-          <h3 className="game-title">UniCandy</h3>
-          <img className="game-image" src="src/assets/thumb_UniCandy.png" alt="UniCandy" />
+      {selectedGame ? (
+        // Renderiza o componente do jogo selecionado
+        <div className="game-container">
+          <button className="back-button" onClick={goBack}>
+            Voltar
+          </button>
+          {selectedGame.component}
         </div>
-        <div className="game-card" onClick={() => handleGameSelect('MemoryCute')}>
-          <h3 className="game-title">Memory Cute</h3>
-          <img className="game-image" src="src/assets/thumb_Memory_Cute.png" alt="Memory Cute" />
-        </div>
-      </div>
+      ) : (
+        // Renderiza a lista de jogos
+        <>
+          <h2 className="heading">
+            Games <span>Unicute Relax</span>
+          </h2>
 
-      {/* Modal com o jogo selecionado */}
-      {isModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={closeModal}>&times;</span>
-            
-            {/* Exibindo o jogo selecionado */}
-            {selectedGame === 'UniCandy' && <UniCandy />}
-            {selectedGame === 'MemoryCute' && <MemoryCute />}
+          <div className="games-container">
+            {jogos.map((jogo) => (
+              <div
+                key={jogo.id}
+                className="game-card"
+                onClick={() => handleGameSelect(jogo)}
+              >
+                <img className="game-image" src={jogo.imagem} alt={jogo.titulo} />
+                <h3 className="game-title">{jogo.titulo}</h3>
+                <p className="game-description">{jogo.descricao}</p>
+              </div>
+            ))}
           </div>
-        </div>
+        </>
       )}
     </section>
   );
