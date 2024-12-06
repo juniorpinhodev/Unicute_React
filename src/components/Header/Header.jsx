@@ -62,13 +62,19 @@ function Header() {
                 <a href="#Games">Games</a>
               </nav>
 
-                      {/* Player */}
-                      <div className="player">
-                <button onClick={handlePlayPause}>
-                  {isPlaying ? "Pause" : "Play"}
+              {/* Player */}
+              <div className="player">
+                <button className="live-button" onClick={handlePlayPause}>
+                  <span className="live-dot"></span>
+                  <span className="live-text">
+                    {isPlaying ? "LIVE" : "LIVE"}
+                  </span>
+                  <i className={`bx ${isPlaying ? "bx-pause-circle" : "bx-play-circle"}`}></i>
                 </button>
               </div>
-              
+
+
+            
 
               <div className="links">
                 <a
