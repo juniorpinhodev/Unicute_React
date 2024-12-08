@@ -1,12 +1,12 @@
-.memory-game {
+.memoryGame {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 2rem;
   border-radius: 10px;
   background: url('./image/bg1.png') no-repeat center center/cover;
-  height: 100vh;
+  height: 85vh;
   overflow: hidden;
   position: relative;
 }
@@ -75,15 +75,15 @@
   transform: rotateY(180deg);
 }
 
-#timer-container {
+.timerContainer {
   margin-top: 2rem;
   font-size: 2rem;
   font-weight: bold;
   color: #fff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Sombramento para o texto */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
 
-#message {
+.message {
   margin-top: 20px;
   font-size: 22px;
   font-weight: bold;
@@ -95,7 +95,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombras para destacar a caixa de mensagem */
 }
 
-#reset-button {
+.resetButton {
   margin-top: 20px;
   padding: 15px 30px;
   background-color: #5347ff;
@@ -107,7 +107,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-#reset-button:hover {
+.resetButton:hover {
   background-color: #865ed1;
   transform: scale(1.1);
   transition: background-color 0.3s, transform 0.3s;
@@ -115,9 +115,13 @@
 
 .ranking {
   position: absolute;
+  top: 47%;
+  left: 20rem;
+  transform: translateY(-50%);   
   text-align: center;
-  top: 40rem;
-  left: 28rem;
+  align-items: center;
+  justify-content: center;
+
   width: 28rem;
   background-color: rgba(255, 255, 255, 0.753);
   border-radius: 10px;
@@ -125,12 +129,11 @@
   box-shadow: 0 10px 20px rgba(0, 5, 0, 0.4), 
             0 15px 30px rgba(0, 5, 0, 0.3), 
             0 20px 40px rgba(0, 5, 0, 0.2);
-
 }
 
 .ranking h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: 2rem;
   text-align: center;
 }
 
@@ -143,3 +146,9 @@
   font-size: 14px;
   margin: 5px 0;
 }
+
+
+
+
+
+

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import './MemoryCute.css';
+import styles from "./MemoryCute.module.css";
 
 import u1 from './image/u1.png';
 import u2 from './image/u2.png';
@@ -86,7 +86,7 @@ const MemoryCute = () => {
   const checkForWin = () => {
     if (cards.every(card => card.isFlipped)) {
       setMessage("Parabéns! Você venceu!");
-      setGameOver(true); // Marca o jogo como terminado
+      setGameOver(true);
       triggerConfetti();
       updateRanking();
     }
@@ -126,8 +126,8 @@ const MemoryCute = () => {
   };
 
   return (
-    <div className="memory-game">
-      <div className="ranking">
+    <div className={styles.memoryGame}>
+      <div className={styles.ranking}>
         <h3>Seu maior recorde: {ranking[0] || "Nenhum"}</h3>
         <ul>
           {ranking.slice(1).map((time, index) => (
@@ -136,11 +136,11 @@ const MemoryCute = () => {
         </ul>
       </div>
 
-      <div className="game">
+      <div className={styles.game}>
         {cards.map((card, index) => (
           <div
             key={index}
-            className={`card ${card.isFlipped ? "flip" : ""}`}
+            className={`${styles.card} ${card.isFlipped ? styles.flip : ""}`}
             onClick={() => flipCard(index)}
             style={{
               backgroundImage: card.isFlipped ? `url(${card.image})` : `url(${preso2})`,
@@ -149,13 +149,13 @@ const MemoryCute = () => {
         ))}
       </div>
 
-      <div id="timer-container">
-        <div id="timer">Tempo: {String(timeLeft).padStart(2, "0")}</div>
+      <div className={styles.timerContainer}>
+        <div className={styles.timer}>Tempo: {String(timeLeft).padStart(2, "0")}</div>
       </div>
 
-      <div id="message">{message}</div>
+      <div className={styles.message}>{message}</div>
 
-      <button id="reset-button" onClick={resetGame}>
+      <button className={styles.resetButton} onClick={resetGame}>
         Reiniciar
       </button>
     </div>
