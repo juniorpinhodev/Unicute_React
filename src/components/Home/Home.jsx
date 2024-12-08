@@ -33,8 +33,8 @@ const Home = () => {
 
       <div className="cols cols1">
         <div className="imgbox">
-          <img src="src/assets/ball.png" alt="Ball" id="splash" />
-          <img src="src/assets/img2.png" alt="Decorative" />
+          <img src="public/ball.png" alt="Ball" id="splash" />
+          <img src="public/img2.png" alt="Decorative" />
         </div>
       </div>
           
