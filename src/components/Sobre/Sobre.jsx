@@ -9,7 +9,7 @@ const Sobre = () => {
         
         <div className="sobre-img">
           <img 
-            src="public/modeloParaFav.png" 
+            src="/assets/modeloParaFav.png" 
             alt="UniCute Relax" 
           />
           <span className="circle"></span>

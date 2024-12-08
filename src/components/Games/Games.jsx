@@ -12,14 +12,14 @@ const Games = () => {
       id: 1,
       titulo: "UniCandy",
       descricao: "Um jogo divertido com doces e unicórnios!",
-      imagem: "public/thumb_UniCandy.png",
+      imagem: "/assets/thumb_UniCandy.png",
       component: <UniCandy />, // Componente do jogo
     },
     {
       id: 2,
       titulo: "Memory Cute",
       descricao: "Treine sua memória com fofura!",
-      imagem: "public/thumb_Memory_Cute.png",
+      imagem: "/assets/thumb_Memory_Cute.png",
       component: <MemoryCute />, // Componente do jogo
     },
   ];

@@ -109,7 +109,7 @@ function Header() {
               
               <a href="/languages/english.html" id="change-language">
                 English Language
-                <img src="public/usa.png" alt="Switch to English" />
+                <img src="/assets/usa.png" alt="Switch to English" />
               </a>
 
               <div className="bx bx-menu" id="menu-icon"></div>
