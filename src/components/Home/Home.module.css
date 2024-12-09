@@ -1,0 +1,577 @@
+.home {
+    display: flex;
+    align-items: center;
+    padding: 0 9%;
+    background-size: cover;
+    background-position: center;
+}
+
+.home-content {
+    max-width: 60rem;
+    z-index: 99;
+}
+
+.home-content h1 {
+    position: relative;
+    display: inline-block;
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content p {
+    position: relative;
+    font-size: 1.6rem;
+    margin: 0.1rem 0 4rem;
+}
+
+.topline {
+    display: block;
+    position: relative;
+    font-size: 2rem;
+    letter-spacing: 0.313rem;
+    color: #000000;
+}
+
+.topline::after {
+    position: absolute;
+    content: '';
+    height: 0.25rem;
+    width: 2.813rem;
+    bottom: 0.625rem;
+    background-color: #7f00ff;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    height: calc(93vh - 80px);
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+    overflow: hidden;
+    margin-top: 3rem;
+}
+
+.wrapper::after { /*circulo pequeno*/
+    position: absolute;
+    content: '';
+    height: 16rem;
+    width: 16rem;
+    border-radius: 50%;
+    left: 35%;
+    top: 12%;
+    background-image: url(https://img.freepik.com/vetores-gratis/fundo-roxo-da-aguarela_1128-18.jpg?w=740&t=st=1686945950~exp=1686946550~hmac=6ff008e3f2df3e961f4ce2947780d47d38edde73a5c3586c9462a712d13fa45f);
+    animation: object2 6s both infinite;
+}
+
+.wrapper::before { /*circulo grande*/
+    position: absolute;
+    content: '';
+    height: 42rem;
+    width: 42rem;
+    border-radius: 50%;
+    left: -9%;
+    top: 40%;
+    background-image: url(https://img.freepik.com/vetores-gratis/fundo-roxo-da-aguarela_1128-18.jpg?w=740&t=st=1686945950~exp=1686946550~hmac=6ff008e3f2df3e961f4ce2947780d47d38edde73a5c3586c9462a712d13fa45f);
+    animation: object1 6s linear infinite;
+}
+
+span {
+    color: var(--main-color);
+}
+ 
+
+.imgbox {
+    position: relative;
+    width: 64%;
+    height: 64%;
+    right: -3rem;
+    filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.3));
+    top: 10rem;
+
+  }
+  
+  .imgbox img { /* Circulo ball */
+    position: absolute;
+    width: 104%;
+    height: auto;
+    top: -1rem;
+    right: 1rem;
+    border-radius: 10px;
+    transform: translate(1%, -1%) rotateY(180deg);
+    filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.3)) saturate(2);
+    transition: opacity 0.3s ease;
+    animation: animateBall 7s forwards infinite; /* Transição suave */
+}
+   
+  .imgbox img:nth-child(2) { /* Unicute */
+    position: relative;
+    height: 110%; 
+    width: calc(155% - 30px); 
+    top: -20rem; 
+    right: 8rem;
+    transform: rotateY(180deg);
+    animation: animateUnicute 4s linear infinite;
+    filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.3));
+}
+
+  
+.cols {
+    width: 40%;
+}
+
+.cols0 {
+    width: 60%;
+    z-index: 6;
+}
+
+.multiText{
+    font-size: 6.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--main-color);
+    margin: 0.5rem 0 1.5rem;
+}
+
+.home-sci {
+    display: flex;
+    position: absolute;
+    bottom: 4rem;
+    width: 10.625rem;
+    justify-content: space-between;
+}
+
+.home-sci a {
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 2.9rem;
+    height: 2.9rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.home-sci a:hover {
+    color: var(--bg-color);
+}
+
+.home-sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--main-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.home-sci a:hover::before {
+    width: 100%;
+}
+
+.home-imgHover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    background: transparent;
+    transition: 3s;
+}
+
+.home-imgHover:hover {
+    background: var(--bg-color);
+    opacity: .8;
+}
+
+@keyframes object1 {
+    50%{
+        left: -13%;
+        top: 41%;
+    }
+}
+
+@keyframes object2 {
+    50%{
+        left: 35%;
+        top: 10%;
+    }
+}
+
+@keyframes animateUnicute {
+    0%, 100% {
+        top: -20rem; 
+        right: 8rem; 
+    }
+    50% {
+        top: -20.6rem; 
+        right: 8.8rem; 
+    }
+}
+
+@keyframes animateBall {
+    0%, 100% {
+        top: -1rem;
+        right: 1rem; 
+    }
+    50% {
+        top: -1.6rem; 
+        right: 1.6rem; 
+        
+    }
+}
+
+/* Responsividade geral */
+/* Estilos para telas grandes, como TVs (1920px ou maior) */
+@media screen and (min-width: 1920px) {
+    .wrapper {
+        padding: 0 15%;
+    }
+
+    .home-content h1 {
+        font-size: 6.5rem;
+    }
+
+    .home-content p {
+        font-size: 2rem;
+    }
+
+    .imgbox img {
+        width: 104%;
+        height: auto;
+        top: -1rem;
+        right: 1rem;
+        border-radius: 10px;
+        transform: translate(1%, -1%) rotateY(180deg);
+    }
+
+    .multiText {
+        font-size: 8rem;
+    }
+}
+
+/* Ajustes para TVs pequenas ou telas de projeção grandes (1366px a 1920px) */
+@media screen and (min-width: 1366px) and (max-width: 1920px) {
+    .wrapper {
+        padding: 0 16%;
+    }
+
+    .home-content h1 {
+        font-size: 6rem;
+    }
+
+    .home-content p {
+        font-size: 1.8rem;
+    }
+
+    .imgbox {
+        width: 70%;
+        height: auto;
+    }
+
+    .imgbox img {
+        width: 104%;
+        height: auto;
+        top: -1rem;
+        right: 10rem;
+        border-radius: 10px;
+        transform: translate(1%, -1%) rotateY(180deg);
+    }
+
+    .imgbox img:nth-child(2) {
+        height: 38rem;
+        width: 38rem;
+        margin-left: 5rem;
+        margin-top: 11rem;
+    }
+
+    .multiText {
+        font-size: 5rem;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    p {
+        font-size: 1.6rem;
+    }
+}
+
+/* Estilos para tablets em orientação horizontal (1024px a 1366px) */
+@media screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+    .wrapper {
+        padding: 0 14%;
+    }
+
+    .home-content h1 {
+        font-size: 6rem;
+    }
+
+    .home-content p {
+        font-size: 1.8rem;
+    }
+
+    .imgbox {
+        width: 70%;
+        height: auto;
+    }
+
+    .imgbox img {
+        width: 110%;
+        height: auto;
+        top: -1rem;
+        right: 10rem;
+        border-radius: 10px;
+        transform: translate(1%, -1%) rotateY(180deg);
+    }
+
+    .imgbox img:nth-child(2) {
+        height: 32rem;
+        width: 32rem;
+        margin-left: 2.8rem;
+        margin-top: 11rem;
+    }
+
+    .multiText {
+        font-size: 4.3rem;
+    }
+
+    h1 {
+        font-size: 4.3rem;
+    }
+
+    p {
+        font-size: 1.4rem;
+    }
+}
+
+/* Estilos para iPad Mini em orientação vertical (768px x 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .wrapper {
+        padding: 0 5%;
+    }
+
+    .imgbox {
+        width: 50%;
+        height: auto;
+        margin: 0 auto;
+        position: relative;
+    }
+  
+    .imgbox img {
+        width: 160%;
+        height: auto;
+        margin-top: -3rem; 
+    }
+
+    .imgbox img:nth-child(2) {
+        height: 30rem;
+        width: 30rem;
+        margin-left: -3rem;
+        margin-top: 11rem;
+    }
+
+    .multiText {
+        font-size: 7rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    p {
+        font-size: 1.6rem; /* Ajustado para valores mais realistas */
+    }
+}
+
+/* Estilos para iPad Mini em orientação horizontal (1024px x 768px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .wrapper {
+        padding: 0 8%;
+    }
+
+    .imgbox {
+        width: 60%;
+        height: auto;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .multiText {
+        font-size: 5rem;
+    }
+
+    .imgbox img:nth-child(2) {
+        height: 28rem;
+        width: 28rem;
+        margin-left: 2.8rem;
+        margin-top: 11rem;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    p {
+        font-size: 1.8rem;
+    }
+}
+
+/* Estilos para celulares em orientação horizontal (320px a 768px) */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .wrapper {
+        padding: 0 8%;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-content p {
+        font-size: 1.6rem;
+    }
+
+    .imgbox {
+        width: 70%;
+        height: auto;
+    }
+
+    .imgbox img {
+        width: 110%;
+        height: auto;
+        top: -1rem;
+        right: 10rem;
+        border-radius: 10px;
+        transform: translate(1%, -1%) rotateY(180deg);
+    }
+
+    .imgbox img:nth-child(2) {
+        height: 25rem;
+        width: 25rem;
+        margin-left: 4rem;
+        margin-top: 12rem;
+    }
+
+    .multiText {
+        font-size: 4rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    p {
+        font-size: 1.4rem;
+    }
+}
+
+/* Estilos para celulares em orientação vertical (320px a 768px) */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    .wrapper {
+        padding: 0 10%; 
+    }
+
+    .wrapper::before {
+        height: 16rem;
+        width: 16rem;
+        left: -20%;
+        margin-top: 15%;
+        opacity: 0.6;
+    }
+
+    .home-content h1 {
+        font-size: 4rem;
+    }
+
+    .home-content p {
+        font-size: 1.3rem;
+    }
+
+    .imgbox {
+        width: 100%;
+        height: auto;
+    }
+
+    .imgbox img {
+        width: 90%;
+        height: auto;
+        margin-top: -4.2rem;
+        margin-right: 7rem;
+        border-radius: 10px;
+        transform: translate(1%, -1%) rotateY(180deg);
+    }
+
+    .imgbox img:nth-child(2) {
+        height: 24rem;
+        width: 24rem;
+        margin-left: 3rem;
+        margin-top: 12rem;
+    }
+
+    .multiText {
+        font-size: 3.2rem;
+    }
+
+    h1 {
+        font-size: 3.2rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Estilos para telas muito pequenas (até 320px) */
+@media screen and (max-width: 320px) {
+    .wrapper {
+        padding: 0 5%; /* Ajuste o padding conforme necessário */
+    }
+
+    .home-content h1 {
+        font-size: 3rem;
+    }
+
+    .home-content p {
+        font-size: 1.2rem;
+    }
+
+    .imgbox {
+        width: 100%;
+        height: auto;
+    }
+
+    .imgbox img {
+        width: 100%;
+        height: auto;
+        top: -1rem;
+        right: 0;
+        border-radius: 10px;
+        transform: translate(0, -1%) rotateY(180deg);
+    }
+
+    .multiText {
+        font-size: 2rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+}
+
+  
+

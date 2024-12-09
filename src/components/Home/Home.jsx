@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import Typed from 'typed.js';
-import "../../App.css"; 
+import styles from './Home.module.css';
 
 const Home = () => {
   useEffect(() => {
-    const typed = new Typed('.multiText', {
+    const typed = new Typed(`.${styles.multiText}`, {
       strings: ['UniCute', 'LoFi', 'Relax'],
       typeSpeed: 100,
       backSpeed: 80,
@@ -18,12 +18,11 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="wrapper" id="Home">
-      
-      <div className="cols cols0">
-        <span className="topline">Olá</span>
+    <section className={styles.wrapper} id="Home">
+      <div className={`${styles.cols} ${styles.cols0}`}>
+        <span className={styles.topline}>Olá</span>
         <h1>
-          Sou <span className="multiText"></span>
+          Sou <span className={styles.multiText}></span>
         </h1>
         <p>
           Relaxe com o UniCute. <br />
@@ -31,13 +30,12 @@ const Home = () => {
         </p>
       </div>
 
-      <div className="cols cols1">
-        <div className="imgbox">
+      <div className={`${styles.cols} ${styles.cols1}`}>
+        <div className={styles.imgbox}>
           <img src="/assets/ball.png" alt="Ball" id="splash" />
-          <img src="/assets/img2.png" alt="Decorative" />
+          <img src="/assets/img2.png" alt="Uniute" />
         </div>
       </div>
-          
     </section>
   );
 };
