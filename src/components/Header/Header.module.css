@@ -1,0 +1,384 @@
+/* Estilo geral para o Header */
+.header {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 5%;
+  background: var(--bg-color);
+  align-items: center;
+  transition: 0.3s;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.logo span {
+  color: var(--main-color);
+}
+
+.navbar {
+  display: flex;
+  gap: 2rem;
+  transition: right 0.3s ease;
+}
+
+.navbar.show {
+  right: 0;
+}
+
+.navbar a {
+  font-size: 1.6rem;
+  color: var(--text-color);
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: var(--main-color);
+}
+
+.links a {
+  font-size: 2rem;
+  color: var(--second-bg-color-black);
+  margin: 0 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: var(--main-color);
+}
+
+.player .liveButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: #62616680;
+  color: #fff;
+  border: 0.1rem solid #ffffff33;
+  border-radius: 2.5rem;
+  backdrop-filter: blur(0.6rem);
+  box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.1), 0 0.1rem 0.3rem #ffffff1a;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.player .liveButton:hover {
+  background: var(--main-color);
+  box-shadow: 0 0.6rem 0.8rem #00000033, 0 0.2rem 0.4rem #ffffff33;
+  transform: scale(1.05);
+}
+
+.player .liveButton:active {
+  transform: scale(0.95);
+  box-shadow: 0 0.2rem 0.4rem #0000001a, 0 0.1rem 0.2rem #ffffff1a;
+}
+
+.popup {
+  position: fixed;
+  z-index: 1000;
+  background: #fff;
+  padding: 1.5rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+  border-radius: 0.8rem;
+  cursor: grab;
+  user-select: none;
+}
+
+.popupContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.closeButton,
+.minimizeButton {
+  position: absolute;
+  top: 1rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.closeButton {
+  right: 1rem;
+  background: #ff0000;
+}
+
+.closeButton:hover {
+  background: #cc0000;
+}
+
+.minimizeButton {
+  left: 1rem;
+}
+
+.minimizeButton:hover {
+  background: #0056b3;
+}
+
+.hamburger {
+  display: none; /* Padrão: oculto para telas maiores */
+}
+
+.hamburgerButton {
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  transition: transform 0.3s ease;
+}
+
+.hamburgerButton i {
+  font-size: 3.5rem; /* Define o tamanho do ícone */
+}
+
+.hamburgerButton.active {
+  transform: rotate(90deg);
+}
+
+.menu-icon {
+  font-size: 40px; /* Alterar o tamanho dos ícones */
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.menu-icon.bx-menu, 
+.menu-icon.bx-x {
+  font-size: 40px; /* Alterar para garantir que ambos ícones tenham o mesmo tamanho */
+}
+
+
+/* Responsividade */
+
+/* iPhone e Smartphones (até 768px) */
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 1rem 2%;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .player {
+    display: flex;
+    align-items: center;
+  }
+
+  .player .liveButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: #62616680;
+    color: #fff;
+    border: 0.1rem solid #ffffff33;
+    border-radius: 2.5rem;
+    backdrop-filter: blur(0.6rem);
+    box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.1), 0 0.1rem 0.3rem #ffffff1a;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    order: 1; 
+  }
+
+  .popup {
+    width: 90%;
+    padding: 1rem;
+    bottom: 10%;
+    left: 5%;
+    transform: none;
+  }
+
+  .popup.minimized {
+    width: 70%;
+    height: auto;
+    bottom: 2%;
+    left: 15%;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: fixed;
+    top: 7.3rem;
+    left: -100%;
+    background: var(--bg-color);
+    width: 70%;
+    height: 100vh;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 3rem;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: all 0.3s ease;
+  }
+
+  /* Mostrar o navbar quando necessário */
+  .navbar.show {
+    left: 0;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .navbar a {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburgerButton {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--text-color);
+    z-index: 1000;
+  }
+
+  .hamburgerButton i {
+    font-size: 3rem;
+  }
+
+  .menu-icon {
+    font-size: 40px;
+    color: #fff;
+    transition: transform 0.3s ease;
+  }
+
+  .menu-icon.bx-menu, 
+  .menu-icon.bx-x {
+    font-size: 40px;
+  }
+}
+
+/* iPhone SE (320px) */
+@media (max-width: 480px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 1rem 1.5%;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .logo {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .navbar a {
+    font-size: 1.4rem;
+  }
+
+  .player .liveButton {
+    font-size: 1.2rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .popup {
+    width: 90%;
+    padding: 1rem;
+    bottom: 10%;
+    left: 5%;
+  }
+
+  .popup.minimized {
+    width: 70%;
+    height: auto;
+    bottom: 2%;
+    left: 15%;
+  }
+
+  .navbar {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .hamburgerButton i {
+    font-size: 2.5rem;
+  }
+}
+
+/* iPhone X, XR, 11 (375px) */
+@media (max-width: 375px) {
+  .header {
+    padding: 1rem 2%;
+  }
+
+  .logo {
+    font-size: 2.4rem;
+  }
+
+  .navbar a {
+    font-size: 1.4rem;
+  }
+
+  .player .liveButton {
+    font-size: 1.3rem;
+    padding: 0.7rem 1.2rem;
+  }
+
+  .popup {
+    width: 90%;
+    padding: 1rem;
+    bottom: 10%;
+    left: 5%;
+  }
+
+  .navbar {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .hamburgerButton i {
+    font-size: 3rem;
+  }
+}
+
+/* Samsung Galaxy S8/S9 (360px) */
+@media (max-width: 360px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 1rem 1.5%;
+  } 
+}

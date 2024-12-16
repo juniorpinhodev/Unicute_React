@@ -1,11 +1,13 @@
 import React, { useState, useRef } from "react";
-import "../../index.css";
+import styles from "./Header.module.css";
 
 function Header() {
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [isPlaying, setPlaying] = useState(false);
   const [popupPosition, setPopupPosition] = useState({ top: "65%", left: "72%" });
-  const popupRef = useRef(null); // Referência para o pop-up
+  const [isMinimized, setMinimized] = useState(false);
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  const popupRef = useRef(null);
 
   const handlePlayPause = () => {
     if (!isPopupOpen) {
@@ -19,7 +21,6 @@ function Header() {
     setPlaying(false);
   };
 
-  // Funções para arrastar
   const handleMouseDown = (e) => {
     const popup = popupRef.current;
     if (popup) {
@@ -43,83 +44,102 @@ function Header() {
     }
   };
 
-  const [isMinimized, setMinimized] = useState(false);
-
   const handleMinimize = () => {
     setMinimized((prev) => !prev);
-};
+  };
 
   return (
     <>
-            <header className="header">
-              <a href="/" className="logo">
-                UNICUTE<span>.</span>
-              </a>
+      <header className={styles.header}>
 
-              <nav className="navbar">
-                <a href="#Home" className="ativado">Home</a>
-                <a href="#Sobre">Sobre</a>
-                <a href="#Games">Games</a>
-              </nav>
+        {/* Botão Hamburger */}
+        <div className={styles.hamburger}>
+          <button
+             aria-label="Abrir menu"
+            className={`${styles.hamburgerButton} ${
+            isMenuOpen ? styles.active : ""
+            }`}
+            onClick={() => setMenuOpen((prev) => !prev)}
+          >
+          <i
+            className={`bx ${isMenuOpen ? "bx-x" : "bx-menu"} menu-icon`}
+          ></i>
 
-              {/* Player */}
-              <div className="player">
-                <button className="live-button" onClick={handlePlayPause}>
-                  <span className="live-dot"></span>
-                  <span className="live-text">
-                    {isPlaying ? "LIVE" : "LIVE"}
-                  </span>
-                  <i className={`bx ${isPlaying ? "bx-pause-circle" : "bx-play-circle"}`}></i>
-                </button>
-              </div>
+          </button>
+        </div>
 
+        <a href="#Home" className={styles.logo}>
+          UNICUTE<span>.</span>
+        </a>
 
-            
+        {/* Menu Navbar */}
+        <nav
+          className={`${styles.navbar} ${isMenuOpen ? styles.show : ""}`}
+          onClick={() => setMenuOpen(false)} // Fecha o menu ao clicar em um link
+        >
+          <a href="#Home" className={styles.active}>
+          Home
+        </a>
+          <a href="#Sobre">Sobre</a>
+          <a href="#Games">Games</a>
+        </nav>
 
-              <div className="links">
-                <a
-                  href="https://www.youtube.com/@unicuterelax"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="bx bxl-youtube"></i>
-                </a>
-                <a
-                  href="https://www.instagram.com/unicuterelax"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="bx bxl-instagram-alt"></i>
-                </a>
-                <a
-                  href="https://www.tiktok.com/@unicuterelax"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="bx bxl-tiktok"></i>
-                </a>
-                <a
-                  href="https://www.facebook.com/unicuterelax"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="bx bxl-facebook"></i>
-                </a>
-              </div>      
-              
-              <a href="/languages/english.html" id="change-language">
-                English Language
-                <img src="/assets/usa.png" alt="Switch to English" />
-              </a>
+        <div className={styles.player}>
+          <button className={styles.liveButton} onClick={handlePlayPause}>
+            <span className={styles.liveDot}></span>
+            <span className={styles.liveText}>LIVE</span>
+            <i
+              className={`bx ${
+                isPlaying ? "bx-pause-circle" : "bx-play-circle"
+              }`}
+            ></i>
+          </button>
+        </div>
 
-              <div className="bx bx-menu" id="menu-icon"></div>
-              
-            </header>
+        <div className={styles.links}>
+          <a
+            href="https://www.youtube.com/@unicuterelax"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="bx bxl-youtube"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/unicuterelax"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="bx bxl-instagram-alt"></i>
+          </a>
+          <a
+            href="https://www.tiktok.com/@unicuterelax"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="bx bxl-tiktok"></i>
+          </a>
+          <a
+            href="https://www.facebook.com/unicuterelax"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="bx bxl-facebook"></i>
+          </a>
+        </div>
 
-            {/* Pop-up para exibir a live */}
-            {isPopupOpen && (
+        <a
+          href="/languages/english.html"
+          id="change-language"
+          className={styles.languageSwitch}
+        >
+          English Language
+          <img src="/assets/usa.png" alt="Switch to English" />
+        </a>
+      </header>
+
+      {isPopupOpen && (
         <div
-          className={`popup ${isMinimized ? "minimized" : ""}`}
+          className={`${styles.popup} ${isMinimized ? styles.minimized : ""}`}
           style={{
             top: !isMinimized ? popupPosition.top : "auto",
             left: !isMinimized ? popupPosition.left : "auto",
@@ -127,25 +147,24 @@ function Header() {
           ref={popupRef}
           onMouseDown={!isMinimized ? handleMouseDown : null}
         >
-          <div className="popup-content">
-            <button className="close-button" onClick={handleClosePopup}>
-              Fechar
-            </button>
-            <button className="minimize-button" onClick={handleMinimize}>
+          <div className={styles.popupContent}>
+            <button className={styles.closeButton} onClick={handleClosePopup}>Fechar</button>
+            <button className={styles.minimizeButton} onClick={handleMinimize}>
               {isMinimized ? "⬆" : "⬇"}
             </button>
             <iframe
               width={isMinimized ? "200" : "560"}
               height={isMinimized ? "112" : "315"}
-              src={`https://www.youtube.com/embed/UdRLmVufx88?autoplay=${isPlaying ? 1 : 0}`}
+              src={`https://www.youtube.com/embed/Bmygmnpvo6k?autoplay=${isPlaying ? 1 : 0}`}
               title="UniCute Relax Live"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
+              allowFullScreen 
             ></iframe>
           </div>
         </div>
       )}
+
     </>
   );
 }
