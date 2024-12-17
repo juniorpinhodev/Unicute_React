@@ -128,7 +128,7 @@ function Header() {
         </div>
 
         <a
-          href="/languages/english.html"
+          href="#Home"
           id="change-language"
           className={styles.languageSwitch}
         >
