@@ -11,7 +11,7 @@ const Sobre = () => {
         
         <div className={styles['sobre-img']}>
           <img 
-            src="/assets/modeloParaFav.png" 
+            src="/assets/LogoUnicute.png" 
             alt="UniCute Relax" 
           />
           <span className={styles.circle}></span>

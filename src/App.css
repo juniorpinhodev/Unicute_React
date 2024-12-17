@@ -165,7 +165,7 @@
     left: 0;
     width: 0;
     height: 100%;
-    background: var(--second-bg-color);
+    background: var(--main-color);
     z-index: -1;
     transition: .5s;
 }
@@ -176,12 +176,12 @@
 
 .footer-iconTop a i {
     font-size: 2.1rem;
-    color: var(--bg-color);
+    color: var(--main-color);
     transition: .5S;
 }
 
 .footer-iconTop a:hover i {
-    color: var(--main-color);
+    color: var(--text-color-alpha);
 }
 
 /* Animação atualização e scroll  */
@@ -291,10 +291,13 @@
 
     .footer-iconTop a {
         padding: 0.5rem;
+        
     }
 
     .footer-iconTop a i {
         font-size: 1.5rem;
+        
+        
     }
 }
 
