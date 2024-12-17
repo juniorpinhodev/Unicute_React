@@ -26,8 +26,10 @@
 
 .navbar {
   display: flex;
-  gap: 2rem;
+  background: linear-gradient(to bottom, var(--bg-color) 7%, #ffffff00 80%);
+  gap: 1.5rem;
   transition: right 0.3s ease;
+  border-radius: 0 12rem;
 }
 
 .navbar.show {
@@ -209,7 +211,7 @@
 }
 
 .hamburger {
-  display: none; /* Padrão: oculto para telas maiores */
+  display: none;
 }
 
 .hamburgerButton {
@@ -224,7 +226,7 @@
 }
 
 .hamburgerButton i {
-  font-size: 3.5rem; /* Define o tamanho do ícone */
+  font-size: 3.5rem;
 }
 
 .hamburgerButton.active {
@@ -232,14 +234,14 @@
 }
 
 .menu-icon {
-  font-size: 40px; /* Alterar o tamanho dos ícones */
+  font-size: 40px;
   color: #fff;
   transition: transform 0.3s ease;
 }
 
 .menu-icon.bx-menu, 
 .menu-icon.bx-x {
-  font-size: 40px; /* Alterar para garantir que ambos ícones tenham o mesmo tamanho */
+  font-size: 4rem;
 }
 
 
@@ -272,12 +274,8 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.8rem 1.5rem;
-    background: #62616680;
-    color: #fff;
-    border: 0.1rem solid #ffffff33;
     border-radius: 2.5rem;
     backdrop-filter: blur(0.6rem);
-    box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.1), 0 0.1rem 0.3rem #ffffff1a;
     font-size: 1.4rem;
     font-weight: bold;
     cursor: pointer;
@@ -307,7 +305,6 @@
     position: fixed;
     top: 7.3rem;
     left: -100%;
-    background: var(--bg-color);
     width: 70%;
     height: 100vh;
     justify-content: flex-start;
@@ -329,7 +326,6 @@
 
   .navbar a {
     font-size: 1.6rem;
-    color: var(--text-color);
     font-weight: 500;
     text-decoration: none;
     transition: color 0.3s ease;

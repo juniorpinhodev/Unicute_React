@@ -148,6 +148,97 @@
 }
 
 
+/* Configurações para telas menores que 768px (tablets e celulares maiores) */
+@media (max-width: 768px) {
+  .memoryGame {
+      padding: 1rem;
+      height: auto;
+      background-size: cover;
+  }
+
+  .game {
+      grid-template-columns: repeat(3, 10rem); /* Reduz número de colunas */
+      grid-gap: 0.8rem; /* Reduz o espaçamento entre as cartas */
+  }
+
+  .card {
+      width: 10rem;
+      height: 10rem;
+  }
+
+  .timerContainer {
+      font-size: 1.6rem;
+      margin-top: 1.5rem;
+  }
+
+  .message {
+      font-size: 1.6rem;
+      padding: 8px;
+  }
+
+  .resetButton {
+      font-size: 1.6rem;
+      padding: 10px 20px;
+  }
+
+  .ranking {
+      top: auto;
+      left: auto;
+      transform: translate(0);
+      position: relative;
+      width: 90%; /* Centraliza e ajusta a largura */
+      margin: 1.5rem auto;
+  }
+
+  .ranking h3 {
+      font-size: 1.8rem;
+  }
+
+  .ranking li {
+      font-size: 1.2rem;
+  }
+}
+
+/* Configurações para telas menores que 480px (smartphones menores) */
+@media (max-width: 480px) {
+  .game {
+      grid-template-columns: repeat(2, 8rem); /* Apenas 2 colunas */
+      grid-gap: 0.6rem; /* Reduz ainda mais o espaçamento */
+  }
+
+  .card {
+      width: 8rem;
+      height: 8rem;
+  }
+
+  .timerContainer {
+      font-size: 1.4rem;
+  }
+
+  .message {
+      font-size: 1.4rem;
+      padding: 6px;
+  }
+
+  .resetButton {
+      font-size: 1.4rem;
+      padding: 8px 15px;
+  }
+
+  .ranking {
+      width: 100%;
+      margin: 1rem auto;
+      padding: 8px;
+  }
+
+  .ranking h3 {
+      font-size: 1.6rem;
+  }
+
+  .ranking li {
+      font-size: 1rem;
+  }
+}
 
 
 

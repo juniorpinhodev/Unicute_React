@@ -1,0 +1,189 @@
+.heading {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+.sobre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
+    padding-bottom: 50rem;
+}
+
+.sobre-img {
+    display: flex;
+    position: relative; 
+    justify-content: center;
+    align-items: center;
+    margin-top: 16rem;
+    margin-bottom: -8rem;
+    left: 50%;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.sobre-img img {
+    width: 90%;
+    border-radius: 50%;
+    border: 0.2rem solid var(--main-color);
+    
+}
+
+.sobre-img .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-top: 0.2rem solid var(--bg-color);
+    border-bottom: 0.2rem solid var(--bg-color);
+    border-left: 0.2rem solid var(--main-color);
+    border-right: 0.2rem solid var(--main-color);
+    animation: sobreSpinner 8s linear infinite;
+}
+
+@keyframes sobreSpinner {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
+}
+
+.about-content p {
+    font-size: 1.6rem; 
+    margin: 1rem 16rem; 
+    text-align: justify; 
+    text-indent: 5rem; 
+    line-height: 1.8; 
+}
+
+
+
+.streaming-carousel {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+.carousel-heading {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #444;
+  }
+  
+.carousel-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 3rem;
+    color: #555;
+  }
+  
+.carousel-icons i:hover {
+    color: var(--main-color); /* Cor de destaque ao passar o mouse */
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+  }
+  
+
+.p-center {
+    text-align: center;
+    margin: 3rem 16rem;
+}
+
+/* === Responsividade para dispositivos móveis === */
+
+/* Para dispositivos com largura até 768px */
+@media screen and (max-width: 768px) {
+    .sobre-img {
+        margin-top: 12rem;
+        margin-bottom: -4rem;
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .about-content p {
+        font-size: 1.4rem;
+        margin: 1rem 3rem;
+        text-indent: 2rem;
+        line-height: 1.6;
+    }
+
+    .p-center {
+        margin: 2rem 3rem;
+        font-size: 1.4rem;
+    }
+
+    .carousel-icons {
+        font-size: 2.5rem;
+    }
+}
+
+/* Para dispositivos com largura até 480px */
+@media screen and (max-width: 480px) {
+    .sobre-img {
+        margin-top: 5rem;
+        margin-bottom: -3rem;
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .about-content p {
+        font-size: 1.2rem;
+        margin: 1rem 1.5rem;
+        text-indent: 1.5rem;
+        line-height: 1.4;
+    }
+
+    .p-center {
+        margin: 1.5rem 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    .carousel-heading {
+        font-size: 1.2rem;
+    }
+
+    .carousel-icons {
+        font-size: 2rem;
+        gap: 10px;
+    }
+}
+
+/* Para dispositivos no modo horizontal (landscape) */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+    .sobre-img {
+        margin-top: 3rem;
+        margin-bottom: -2rem;
+        width: 18rem;
+        height: 18rem;
+    }
+
+    .about-content p {
+        font-size: 1.3rem;
+        margin: 1rem 2rem;
+        text-indent: 2rem;
+        line-height: 1.5;
+    }
+
+    .p-center {
+        margin: 1rem 2rem;
+        font-size: 1.3rem;
+    }
+
+    .carousel-icons {
+        font-size: 2.2rem;
+        gap: 15px;
+    }
+}
+

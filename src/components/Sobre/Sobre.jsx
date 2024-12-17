@@ -1,21 +1,23 @@
 import React from 'react';
-import '../../App.css';
+import styles from './Sobre.module.css'; // Importando o CSS como módulo
 
 const Sobre = () => {
   return (
-    <section className="sobre" id="Sobre">
+    <section className={styles.sobre} id="Sobre">
       <article>
-        <h2 className="heading">Sobre <span>Unicute Relax</span></h2> 
+        <h2 className={styles.heading}>
+          Sobre <span>Unicute Relax</span>
+        </h2> 
         
-        <div className="sobre-img">
+        <div className={styles['sobre-img']}>
           <img 
             src="/assets/modeloParaFav.png" 
             alt="UniCute Relax" 
           />
-          <span className="circle"></span>
+          <span className={styles.circle}></span>
         </div>
         
-        <div className="about-content">
+        <div className={styles['about-content']}>
           <p>
             Com <strong>UniCute</strong>, embarque em uma jornada encantadora de música <em>LoFi</em> e serenidade.
             Com o nosso adorável unicórnio, UniCute, como guia, oferecemos uma live 24/7 com músicas relaxantes
@@ -40,19 +42,19 @@ const Sobre = () => {
           </p>
 
           {/* Carrossel de Logos */}
-          <div className="streaming-carousel">
-            <h3 className="carousel-heading">Disponível em breve:</h3>
-            <div className="carousel-icons">
+          <div className={styles['streaming-carousel']}>
+            <h3 className={styles['carousel-heading']}>Disponível em breve:</h3>
+            <div className={styles['carousel-icons']}>
               <i className="bx bxl-spotify" aria-label="Spotify"></i>
               <i className="bx bxl-deezer" aria-label="Deezer"></i>
               <i className="bx bxl-amazon" aria-label="Amazon Music"></i>
-              <i className="bx bxl-apple" aria-label="Apple Music"></i>
+              <i className="bx bxl-tiktok" aria-label="Tik Tok"></i>
               <i className="bx bxl-youtube" aria-label="YouTube Music"></i>
             </div>
           </div>
         </div>
         
-        <p className='p-center'>
+        <p className={styles['p-center']}>
           Bem-vindo ao UniCute Relax - onde a música e a paz se unem para acalmar sua mente e renovar suas energias!
         </p>
       </article>
