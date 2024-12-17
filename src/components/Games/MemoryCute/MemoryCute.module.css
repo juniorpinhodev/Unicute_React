@@ -202,7 +202,7 @@
 /* Configurações para telas menores que 480px (smartphones menores) */
 @media (max-width: 480px) {
   .game {
-      grid-template-columns: repeat(2, 8rem); /* Apenas 2 colunas */
+      grid-template-columns: repeat(3, 8rem); /* Apenas 2 colunas */
       grid-gap: 0.6rem; /* Reduz ainda mais o espaçamento */
   }
 
