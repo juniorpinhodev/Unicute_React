@@ -2,31 +2,6 @@
     opacity: 0.4 !important;
   }
 
-#change-language {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none; 
-    font-size: 1.1rem; 
-    font-weight: bold;
-    color: var(--text-color, #333);
-    gap: 0rem;
-    transition: color 0.3s ease; 
-}
-
-#change-language img {
-    width: 5rem; /* Define o tamanho da imagem */
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-#change-language:hover {
-    color: var(--main-color, #6637d4);
-}
-
-#change-language:hover img {
-    transform: scale(1.2); /* Aumenta levemente a imagem no hover */
-}
-
 /* fim efeito bolas */
 
 .btn-box {

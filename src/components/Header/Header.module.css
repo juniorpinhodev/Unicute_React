@@ -10,17 +10,18 @@
   background: var(--bg-color);
   align-items: center;
   transition: 0.3s;
-  z-index: 100;
+  z-index: 101;
 }
 
 .logo {
-  font-size: 2.5rem;
+  font-size: 3.2rem;
   color: var(--text-color);
   font-weight: 600;
 }
 
 .logo span {
   color: var(--main-color);
+  font-size: 4rem;
 }
 
 .navbar {
@@ -34,29 +35,34 @@
 }
 
 .navbar a {
-  font-size: 1.6rem;
+  font-size: 1.9rem;
   color: var(--text-color);
   font-weight: 500;
+  margin: 0 2rem;
   text-decoration: none;
-  margin-bottom: 1rem;
   transition: color 0.3s ease;
 }
 
 .navbar a:hover,
 .navbar a.active {
   color: var(--main-color);
+  transform: scale(1.05);
 }
 
 .links a {
-  font-size: 2rem;
+  display: inline-block;
+  margin: 0 1.3rem;
+  padding: 0;
+  font-size: 2.4rem;
   color: var(--second-bg-color-black);
-  margin: 0 1rem;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: transform 0.3s ease, color 0.4s ease;
 }
 
 .links a:hover {
   color: var(--main-color);
+  cursor: pointer;
+  transform: rotate(12deg);
 }
 
 .player .liveButton {
@@ -64,12 +70,12 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.8rem 1.5rem;
-  background: #62616680;
-  color: #fff;
+  background: #a979e7;
+  color: #ffffff;
   border: 0.1rem solid #ffffff33;
   border-radius: 2.5rem;
   backdrop-filter: blur(0.6rem);
-  box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.1), 0 0.1rem 0.3rem #ffffff1a;
+  box-shadow: 0 0.4rem 0.6rem #0000002f, 0 0.1rem 0.3rem #ffffff1a;
   font-size: 1.4rem;
   font-weight: bold;
   cursor: pointer;
@@ -78,7 +84,7 @@
 
 .player .liveButton:hover {
   background: var(--main-color);
-  box-shadow: 0 0.6rem 0.8rem #00000033, 0 0.2rem 0.4rem #ffffff33;
+  box-shadow: 0 0.6rem 0.8rem #0000002d, 0 0.2rem 0.4rem #ffffff33;
   transform: scale(1.05);
 }
 
@@ -86,6 +92,74 @@
   transform: scale(0.95);
   box-shadow: 0 0.2rem 0.4rem #0000001a, 0 0.1rem 0.2rem #ffffff1a;
 }
+
+.liveText {
+  font-size: 1.4rem;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+.liveText:hover {
+  font-size: 1.4rem;
+  color: #fff;
+
+}
+
+.player .liveDot {
+  display: inline-block;
+  width: 0.52rem;
+  height: 0.52rem;
+  margin-right: 0.6rem;
+  border-radius: 50%;
+  background-color: #cc0a0a;
+  animation: blink 1s infinite;
+  box-shadow: 0 0 8px #ff0000;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 8px #8f0404;
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+    box-shadow: 0 0 4px #ff5555;
+  }
+}
+
+.languageSwitch {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: column-reverse;
+  align-items: center;
+  text-align: center;
+  text-decoration: none; 
+  font-size: 1.1rem; 
+  font-weight: bold;
+  color: var(--text-color);
+
+}
+
+.languageSwitch:hover {
+  color: #7f00ff;
+  transform: scale(1.03); 
+}
+
+.languageSwitch img {
+  width: 5rem; 
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.languageSwitch:hover img {
+  transform: scale(1.1);
+}
+
 
 .popup {
   position: fixed;
