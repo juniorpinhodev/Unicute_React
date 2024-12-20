@@ -81,16 +81,21 @@
     color: #444;
   }
   
-.carousel-icons {
+.carousel-icons{
     display: flex;
     justify-content: center;
     gap: 20px;
     font-size: 3rem;
-    color: #555;
+  }
+
+  .carousel-icons a {
+    font-size: 3rem;
+    color: #444;
+    text-decoration: none;
   }
   
 .carousel-icons i:hover {
-    color: var(--main-color); /* Cor de destaque ao passar o mouse */
+    color: var(--main-color); 
     transform: scale(1.2);
     transition: all 0.3s ease;
   }
