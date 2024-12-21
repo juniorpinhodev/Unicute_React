@@ -30,7 +30,7 @@ const Sobre = () => {
 </p>
 
 <p>
-  O UniCute Relax é para todos! Se você precisa de um espaço acolhedor, UniCute Relax também é indicado para lidar com <strong>neurodivergências</strong>, como <strong>TDAH</strong> ou <strong>autismo</strong>, este é o lugar certo. Seja para organizar suas ideias, focar ou simplesmente descansar, nosso objetivo é tornar sua rotina mais leve e agradável.
+  O UniCute Relax é para todos! Se você precisa de um espaço acolhedor, UniCute Relax também é sugerido para lidar com <em>neurodivergências</em>, como <strong>TDAH</strong> ou <strong>autismo</strong>, auxiliando no <em>foco</em> e <em>concentração</em>. Este é o lugar certo, seja para organizar suas ideias, focar ou simplesmente descansar, nosso objetivo é tornar sua rotina mais leve e agradável.
 </p>
 
 <p>
@@ -55,14 +55,7 @@ const Sobre = () => {
           <div className={styles['streaming-carousel']}>
             <h3 className={styles['carousel-heading']}>Disponível nas principais plataformas de Streamings:</h3>
             <div className={styles['carousel-icons']}>
-              {/* <i className="bx bxl-spotify" aria-label="Spotify"></i>
-              <i className="bx bxl-deezer" aria-label="Deezer"></i>
-              <i className="bx bxl-amazon" aria-label="Amazon Music"></i>
-              <i className="bx bxl-youtube" aria-label="YouTube Music"></i>
-              <i className="bx bxl-tiktok" aria-label="Tik Tok"></i>
-              <i className="bx bxl-apple" aria-label="Apple Music"></i> */}
-
-
+              
               <a href="https://open.spotify.com/intl-pt/artist/15rAb41co5784UdtRFGRWD" target="_blank" rel="noopener noreferrer" >
                   <i className="bx bxl-spotify" aria-label="Spotify"></i>
                 </a>
